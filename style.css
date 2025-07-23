@@ -1,0 +1,282 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+nav{
+    width: 100%;
+    height: 60px;
+    background: black;
+}
+nav ul{
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 20px;
+}
+nav ul li{
+    padding: 10px;
+    margin: right(20px);
+    border: 1px solid white;
+    border-radius: 5px;
+    display: inline-block;
+    margin-top: 10px;
+    margin-right: 10px;
+    background: white;
+    cursor: pointer;
+}
+nav ul li a{
+    color: black;
+    font: 20px;
+    text-decoration: none;
+}
+
+#home{
+    background-image: url(image/Hi.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 600px;
+}
+.about-section {
+  background-color: #fff;
+  padding: 80px 20px;
+}
+
+.about-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+}
+
+.about-image img {
+  width: 250px;
+  border-radius: 10px;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+  margin-right: 40px;
+}
+
+.about-text {
+  max-width: 600px;
+}
+
+.about-text h2 {
+  font-size: 28px;
+  margin-bottom: 10px;
+  color: #222;
+}
+
+.about-text h3 {
+  font-size: 22px;
+  margin-bottom: 20px;
+}
+
+.about-text p {
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.about-text ul {
+  list-style: none;
+  padding: 0;
+}
+
+.about-text ul li {
+  font-size: 16px;
+  margin-bottom: 8px;
+}
+
+
+
+#protfolio {
+  width: 100%;
+  margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap; /* multiple images ek row te jabe */
+  gap: 20px; /* spacing between images */
+}
+
+.image-card {
+  position: relative;
+  width: 250px;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.image-card img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+}
+
+.image-card:hover img {
+  transform: scale(1.05);
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.7);
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+}
+
+.image-card:hover .overlay {
+  opacity: 1;
+}
+
+.view-btn {
+  width: 120px;
+  height: 40px;
+  background: green;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  transform: translateY(20px);
+  opacity: 0;
+  transition: 0.3s ease;
+}
+
+.image-card:hover .view-btn {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+#contact{
+
+    display: flex;
+    
+}
+#contact form{
+    margin-left: 30px;
+    margin-top: 30px;
+    border: 1px solid black;
+    width: 20%;
+    height: fit-content;
+    padding: 20px;
+}
+#contact form input[type="text"]{
+    width: 100%;
+    height: 35px;
+    border: 1px solid black;
+    padding: 5px;
+    outline: none;
+}
+#contact form input[type="email"]{
+    width: 100%;
+    height: 35px;
+    border: 1px solid black;
+    padding: 5px;
+    outline: none;
+}
+#contact form input[type="submit"]{
+    width: 103%;
+    height: 40px;
+    padding: 5px;
+    margin: auto;
+    cursor: pointer;
+    background: green;
+    border: none;
+    box-shadow: 5px 5px 5px rgb(129, 126, 126);
+    margin-top: 10px;
+}
+#contact form textarea{
+    width: 103%;
+    height: 100px;
+}
+.maps-img{
+    height: 350px;
+    width: 80%;
+    align-items: end;
+    margin-top: 30px;
+    position: relative;
+    display: flex;
+    align-items: end;
+    justify-content: center;
+    overflow: hidden;
+}
+.maps-img img{
+    width: 95%;
+    height: 100%;
+    margin-left: 50px;
+    margin-right: 50px;
+    border-radius: 10px;
+    object-fit: cover;
+}
+.maps-img:hover .maps-img img{
+    transform: scale(1.05);
+}
+.maps-overlay{
+    position: absolute;
+    top: 0;
+    left: 50px; /* match margin-left of image */
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.6);
+    opacity: 0;
+    transition: 0.3s ease-in-out;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.maps-img:hover .maps-overlay {
+  opacity: 1;
+}
+.maps-overlay button{
+    width: 120px;
+    height: 40px;
+    justify-content: center;
+    background: green;
+    border: none;
+    box-shadow: 0px 4px 12px;
+    border: 10px;
+    cursor: pointer;
+    align-items: center;
+}
+
+
+#social{
+    background: rgba(31, 29, 29, 0.87);
+    height: 300px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-self: baseline;
+    justify-content: center;
+    align-items: flex-end;
+    padding-bottom: 50px;
+    height: 200px;
+}
+#social button{
+    width: 50px;
+    height: 50px;
+    border: 1px solid white;
+    margin-left: 30px;
+    border-radius: 50%;
+    background: none;
+}
+#social button:hover{
+    box-shadow: 0px 1px 5px rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+}
+
