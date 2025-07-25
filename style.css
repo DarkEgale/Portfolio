@@ -101,6 +101,7 @@ nav ul li a{
   margin-top: 20px;
   display: flex;
   flex-wrap: wrap; 
+  justify-content: center;
   gap: 20px; 
 }
 
@@ -109,6 +110,7 @@ nav ul li a{
   width: 250px;
   overflow: hidden;
   border-radius: 10px;
+  margin: 20px;
 }
 
 .image-card img {
@@ -117,6 +119,7 @@ nav ul li a{
   display: block;
   border-radius: 10px;
   transition: transform 0.3s ease;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.61);
 }
 
 .image-card:hover img {
