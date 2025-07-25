@@ -2,6 +2,9 @@
     margin: 0;
     padding: 0;
 }
+html{
+  scroll-behavior: smooth;
+}
 body{
     margin: 0;
     padding: 0;
@@ -97,8 +100,8 @@ nav ul li a{
   width: 100%;
   margin-top: 20px;
   display: flex;
-  flex-wrap: wrap; /* multiple images ek row te jabe */
-  gap: 20px; /* spacing between images */
+  flex-wrap: wrap; 
+  gap: 20px; 
 }
 
 .image-card {
@@ -138,6 +141,7 @@ nav ul li a{
 
 .image-card:hover .overlay {
   opacity: 1;
+  cursor: pei0-;
 }
 
 .view-btn {
@@ -159,6 +163,15 @@ nav ul li a{
 .image-card:hover .view-btn {
   transform: translateY(0);
   opacity: 1;
+  cursor: pointer;
+}
+@media (max-width:700px) {
+  #portfolio{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
 }
 
 #contact{
@@ -189,7 +202,7 @@ nav ul li a{
     outline: none;
 }
 #contact form input[type="submit"]{
-    width: 103%;
+    width: 100%;
     height: 40px;
     padding: 5px;
     margin: auto;
@@ -200,8 +213,26 @@ nav ul li a{
     margin-top: 10px;
 }
 #contact form textarea{
-    width: 103%;
+    width: 100%;
     height: 100px;
+}
+@media (max-width:700px) {
+  #contact{
+    display:flex;
+    flex-direction: column;
+    margin: 0px;
+  }
+  #contact form{
+    width: 100%;
+    margin: 0px;
+    padding: 0;
+  }
+  .maps-img{
+    width: 100%;
+  }
+  .maps-img img{
+    width: 100%;
+  }
 }
 .maps-img{
     height: 350px;
