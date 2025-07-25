@@ -38,10 +38,12 @@ nav ul li a{
 }
 
 #home{
-    background-image: url(image/Hi.png);
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 600px;
+    width: 100%;
+    height: fit-content;
+}
+#home img{
+  width: 100%;
+  height: auto;
 }
 .about-section {
   background-color: #fff;
@@ -177,92 +179,84 @@ nav ul li a{
   }
 }
 
-#contact{
-
+#contact {
     display: flex;
-    
+    gap: 20px;
+    flex-wrap: wrap;
 }
-#contact form{
+
+#contact form {
     margin-left: 30px;
     margin-top: 30px;
     border: 1px solid black;
-    width: 20%;
+    width: 25%;
     height: fit-content;
     padding: 20px;
+    box-sizing: border-box;
 }
-#contact form input[type="text"]{
+
+#contact form input[type="text"],
+#contact form input[type="email"],
+#contact form textarea {
     width: 100%;
-    height: 35px;
     border: 1px solid black;
     padding: 5px;
     outline: none;
+    box-sizing: border-box;
+    margin-bottom: 10px;
 }
-#contact form input[type="email"]{
-    width: 100%;
+
+#contact form input[type="text"],
+#contact form input[type="email"] {
     height: 35px;
-    border: 1px solid black;
-    padding: 5px;
-    outline: none;
 }
-#contact form input[type="submit"]{
+
+#contact form textarea {
+    height: 100px;
+    resize: none;
+}
+
+#contact form input[type="submit"] {
     width: 100%;
     height: 40px;
     padding: 5px;
-    margin: auto;
     cursor: pointer;
     background: green;
     border: none;
     box-shadow: 5px 5px 5px rgb(129, 126, 126);
     margin-top: 10px;
 }
-#contact form textarea{
-    width: 100%;
-    height: 100px;
-}
-@media (max-width:700px) {
-  #contact{
-    display:flex;
-    flex-direction: column;
-    margin: 0px;
-  }
-  #contact form{
-    width: 100%;
-    margin: 0px;
-    padding: 0;
-  }
-  .maps-img{
-    width: 100%;
-  }
-  .maps-img img{
-    width: 100%;
-  }
-}
-.maps-img{
+
+/* Map image container */
+.maps-img {
     height: 350px;
-    width: 80%;
-    align-items: end;
+    width: 70%;
     margin-top: 30px;
     position: relative;
     display: flex;
     align-items: end;
     justify-content: center;
     overflow: hidden;
+    box-sizing: border-box;
 }
-.maps-img img{
-    width: 95%;
+
+.maps-img img {
+    width: 100%;
     height: 100%;
-    margin-left: 50px;
-    margin-right: 50px;
     border-radius: 10px;
     object-fit: cover;
 }
-.maps-img:hover .maps-img img{
+
+/* Hover zoom effect */
+.maps-img:hover img {
     transform: scale(1.05);
 }
-.maps-overlay{
+
+/* Map overlay */
+.maps-overlay {
     position: absolute;
     top: 0;
-    left: 50px; /* match margin-left of image */
+    left: 0;
     width: 100%;
     height: 100%;
     background-color: rgba(255, 255, 255, 0.6);
@@ -273,19 +267,50 @@ nav ul li a{
     justify-content: center;
     align-items: center;
 }
+
 .maps-img:hover .maps-overlay {
-  opacity: 1;
+    opacity: 1;
 }
-.maps-overlay button{
+
+.maps-overlay button {
     width: 120px;
     height: 40px;
-    justify-content: center;
     background: green;
     border: none;
     box-shadow: 0px 4px 12px;
-    border: 10px;
     cursor: pointer;
-    align-items: center;
+}
+
+/* 🔁 Responsive fixes */
+@media (max-width: 700px) {
+    #contact {
+        flex-direction: column;
+        margin: 0;
+        align-items: center;
+    }
+
+    #contact form {
+        width: 90%;
+        margin: 20px 0;
+        padding: 20px;
+    }
+
+    .maps-img {
+        width: 100%;
+        height: auto;
+        margin: 0;
+        padding: 0 10px;
+    }
+
+    .maps-img img {
+        width: 100%;
+        height: auto;
+        margin: 0;
+    }
+
+    .maps-overlay {
+        left: 0;
+    }
 }
 
 
