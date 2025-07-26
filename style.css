@@ -171,7 +171,7 @@ nav ul li a{
 
 .image-card:hover .overlay {
   opacity: 1;
-  cursor: pei0-;
+  cursor:pointer;
 }
 
 .view-btn {
@@ -201,6 +201,11 @@ nav ul li a{
     flex-direction: column;
     justify-content: center;
     align-items: center;
+  }
+  .image-card{
+    width: 100%;
+    height: fit-content;
+    
   }
 }
 
