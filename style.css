@@ -13,8 +13,8 @@ body{
 nav{
     width: 100%;
     height: 60px;
-    background: none;
-    position:absolute;
+    background: black;
+    position:static;
 }
 nav ul{
     display: flex;
@@ -45,6 +45,13 @@ nav ul li a{
     font: 20px;
     text-decoration: none;
 }
+.nav-link.active {
+  background: white;
+  color: black !important;
+  padding: 8px 10px;
+  border-radius: 5px;
+}
+
 
 #home{
     width: 100%;
@@ -132,14 +139,17 @@ nav ul li a{
   flex-wrap: wrap; 
   justify-content: center;
   gap: 20px; 
+  padding-top: 100px;
 }
-
 .image-card {
-  position: relative;
   width: 250px;
-  overflow: hidden;
-  border-radius: 10px;
   margin: 20px;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+  display: flex; 
+  flex-wrap: wrap;
+  position: relative;
 }
 
 .image-card img {
@@ -148,68 +158,50 @@ nav ul li a{
   display: block;
   border-radius: 10px;
   transition: transform 0.3s ease;
-  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.61);
+}
+
+.overlay {
+    position:absolute ;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.6);
+    opacity: 0;
+    transition: 0.3s ease-in-out;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    flex-wrap: wrap;
 }
 
 .image-card:hover img {
   transform: scale(1.05);
 }
 
-.overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(255, 255, 255, 0.7);
-  opacity: 0;
-  transition: opacity 0.3s ease-in-out;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  border-radius: 10px;
-}
-
 .image-card:hover .overlay {
   opacity: 1;
-  cursor:pointer;
+  visibility: visible;
+  cursor: pointer;
 }
-
-.view-btn {
-  width: 120px;
-  height: 40px;
-  background: green;
-  color: white;
+.image-card button{
+  width: 80px;
+  height: 35px;
+  border-radius: 6px;
+  cursor: pointer;
+  background: 	rgb(31, 173, 31);
   border: none;
-  border-radius: 8px;
-  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.3);
-  cursor: pointer;
-  font-size: 16px;
-  font-weight: bold;
-  transform: translateY(20px);
-  opacity: 0;
-  transition: 0.3s ease;
+  margin-top: 5px;
+}
+.image-card button:hover{
+  background:	rgb(24, 139, 24) ;
+  transform: scale(1.1);
+  transition: 0.3s;
 }
 
-.image-card:hover .view-btn {
-  transform: translateY(0);
-  opacity: 1;
-  cursor: pointer;
-}
-@media (max-width:700px) {
-  #portfolio{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-  .image-card{
-    width: 100% ;
-    height: fit-content;
-    
-  }
-}
+
 
 #contact {
     display: flex;
@@ -279,12 +271,12 @@ nav ul li a{
     object-fit: cover;
 }
 
-/* Hover zoom effect */
+
 .maps-img:hover img {
     transform: scale(1.05);
 }
 
-/* Map overlay */
+
 .maps-overlay {
     position: absolute;
     top: 0;
@@ -313,7 +305,6 @@ nav ul li a{
     cursor: pointer;
 }
 
-/* 🔁 Responsive fixes */
 @media (max-width: 700px) {
     #contact {
         flex-direction: column;
@@ -371,13 +362,14 @@ nav ul li a{
     cursor: pointer;
 }
 
-#motion{
-  width: 50px;
-  height: 50px;
-  background: blue;
-  filter: blur(20px);
-  border-radius: 50%;
+#motion {
   position: absolute;
-
-  transition: 0.1s;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(220, 15, 247, 0.555), transparent);
+  filter: blur(40px);
+  pointer-events: none; 
+  z-index: 0;
+  transition: 0.1s ease-out;
 }
