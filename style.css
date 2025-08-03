@@ -122,9 +122,9 @@ nav ul li a{
   cursor: pointer;
   background: rgb(34, 182, 34);
   border: none;
-  box-shadow: 5px 5px 5px rgb(34, 182, 34);
+  box-shadow: 0px 0px 15px rgb(34, 182, 34);
   border-radius: 5px;
-  transition: transform 10 all ease-in-out;
+  transition: 0.3s;
 }
 .about-btn:hover{
   transform: scale(1.2);
@@ -132,15 +132,18 @@ nav ul li a{
 
 
 
-#protfolio {
+#portfolio {
   width: 100%;
   margin-top: 20px;
-  display: flex;
-  flex-wrap: wrap; 
-  justify-content: center;
-  gap: 20px; 
   padding-top: 100px;
+  
+  display: flex;
+  flex-direction: row;  
+  flex-wrap: wrap;      
+  justify-content: center;
+  gap: 20px;             
 }
+
 .image-card {
   width: 250px;
   margin: 20px;
@@ -194,11 +197,16 @@ nav ul li a{
   background: 	rgb(31, 173, 31);
   border: none;
   margin-top: 5px;
+  transform: 0.3s;
 }
 .image-card button:hover{
   background:	rgb(24, 139, 24) ;
   transform: scale(1.1);
   transition: 0.3s;
+}
+
+.image-card button:active{
+  transform: scale(1.1);
 }
 
 
@@ -249,7 +257,13 @@ nav ul li a{
     border: none;
     box-shadow: 5px 5px 5px rgb(129, 126, 126);
     margin-top: 10px;
+    box-shadow: 0px 0px 15px green;
+    transition: 01s;
 }
+#contact form input[type="submit"]:hover{
+  transform: scale(1.05);
+}
+
 
 /* Map image container */
 .maps-img {
