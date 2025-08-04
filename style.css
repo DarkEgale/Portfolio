@@ -60,6 +60,7 @@ nav ul li a{
 #home img{
   width: 100%;
   height: auto;
+  justify-content: center;
 }
 .about-section {
   background-color: #fff;
@@ -79,6 +80,7 @@ nav ul li a{
     flex-wrap: none;
   }
 }
+
 
 .about-image img {
   width: 250px;
